@@ -37,13 +37,14 @@ public class Principal {
 		//Calcular o Salario Bruto Senior
 		proSenior.salarioBruto = seSalarioServico.calcularSalBruto(proSenior.qtdHorasTrabalhadas, proSenior.valorHoraTrabalhada);
 		
+		
 		//Calcular o Salario Liquido Senior
 		proSenior.salarioLiquido = seSalarioServico.calcularSalLiquido(proSenior.salarioBruto, proSenior.irSenior);
 		
 		System.out.println("O salário Bruto é: " + proSenior.salarioBruto);
 		System.out.println("O salário Líquido (Bruto - IR) é :" + proSenior.salarioLiquido);
 		
-	
+/*		--------------------------------------------------------------------------
 		
 		//Cadastro Professor Pleno
 		System.out.println("###Cadastro Professor Pleno###");
@@ -90,7 +91,7 @@ public class Principal {
 		
 		
 		
-		
+		*/
 		
 
 	}
