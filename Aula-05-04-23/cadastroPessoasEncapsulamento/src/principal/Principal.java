@@ -14,19 +14,18 @@ public class Principal {
 		String recebeNome;
 		int recebeCpf;
 		
+		//-----------####Cadastro de Pessoa
 		System.out.println("---Cadastro de Pessoa---");
 		System.out.println("Digite o nome da Pessoa");
 		recebeNome = entradaDados.next();
 		
-		//Armazena a String recebeNome no set da Classe Pessoa
-		
+		//Armazena (envia p/) a String recebeNome no set da Classe Pessoa
 		novaPessoa.setNome(recebeNome);
 		
-		//Recebe o nome pelo método GET e exibe
+		//Recebe (pega) o nome pelo método GET e exibe
 		System.out.println("O nome recebido pelo get é: " + novaPessoa.getNome());
 		
-		//------------------------###-----------------------
-		
+		//-----------####Cadastro do CPF		
 		System.out.println("Digite o CPF");
 		recebeCpf = Integer.parseInt(entradaDados.next());
 		
@@ -35,7 +34,6 @@ public class Principal {
 		
 		//Recebe o cpf pelo método GET da Classe Pessoa e exibe
 		System.out.println("O CPF recebido pelo get é : " + novaPessoa.getCpf());
-		
 		
 		
 		
