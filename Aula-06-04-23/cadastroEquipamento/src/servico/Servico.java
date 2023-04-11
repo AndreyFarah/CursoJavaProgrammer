@@ -12,15 +12,15 @@ public class Servico {
 			
 			furadeiraParamentro.setCodigo(JOptionPane.showInputDialog("Digite o codigo da Furadeira: "));
 			furadeiraParamentro.setMarca(JOptionPane.showInputDialog("Digite a marca da Furadeira: "));
-			furadeiraParamentro.setPrecoDeCompra(Integer.parseInt(JOptionPane.showInputDialog("Digite o preço de compra da furadeira")));
-			furadeiraParamentro.setPrecoDeVenda(Integer.parseInt(JOptionPane.showInputDialog("Digite o preço de venda da furadeira")));
+			furadeiraParamentro.setPrecoDeCompra(Double.parseDouble(JOptionPane.showInputDialog("Digite o preço de compra da furadeira")));
+			furadeiraParamentro.setPrecoDeVenda(Double.parseDouble(JOptionPane.showInputDialog("Digite o preço de venda da furadeira")));
 			
 			
 			return furadeiraParamentro;
 		}
 	
 		//EXIBE FURADEIRA - GET
-		public Furadeira exibeFuradeira (Furadeira furadeiraParametro) {
+		public void exibeFuradeira (Furadeira furadeiraParametro) {
 			
 			//CALCULAR O LUCRO: VENDA - LUCRO 
 			CalcularLucro calcularLucro = new CalcularLucro();
@@ -33,7 +33,7 @@ public class Servico {
 			JOptionPane.showMessageDialog(null, "Preço da venda da furadeira : " + furadeiraParametro.getPrecoDeVenda());
 			JOptionPane.showMessageDialog(null, "O lucro é da furadeira foi de : " + lucro);
 			
-			return furadeiraParametro;
+			
 		}
 		
 		
@@ -49,7 +49,7 @@ public class Servico {
 		}
 		
 		//EXIBE O CADASTRO DA MAKITA - GET
-		public Makita exibeMakita (Makita makitaParametro) {
+		public void exibeMakita (Makita makitaParametro) {
 			
 			JOptionPane.showMessageDialog(null, "O código da Makita é : " + makitaParametro.getCodigo());
 			JOptionPane.showMessageDialog(null, "Marca da Makita : " + makitaParametro.getMarca());
@@ -62,7 +62,6 @@ public class Servico {
 			//EXIBE O LUCRO DA MAKITA
 			JOptionPane.showMessageDialog(null, "O lucro da Makita foi de : " + lucro);
 			
-			return makitaParametro;
 			
 		}
 	
