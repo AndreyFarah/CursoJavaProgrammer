@@ -10,13 +10,25 @@ import servico.Servico;
 public class Principal {
 
 	public static void main(String[] args) {
+			
+	//	Furadeira furadeira = new Furadeira();
+	//	Makita makita = new Makita();
 		
 		
-		Furadeira furadeira = new Furadeira();
-		Makita makita = new Makita();
 		Servico chamaServico = new Servico();
+		
+		
+		//CHAMA O METODO MENU
+		chamaServico.menu();
+		
+		
+		
+		
+		
+		
+		
 	
-		int escolhaCadastro;
+/*		int escolhaCadastro;
 		
 		escolhaCadastro = Integer.parseInt(JOptionPane.showInputDialog("Digite a opção que deseja cadastrar: #### 1- FURADEIRA #### 2- MAKITA ####"));
 		
@@ -42,7 +54,7 @@ public class Principal {
 		
 		if (escolhaCadastro != 1 && escolhaCadastro != 2) {			
 			JOptionPane.showMessageDialog(null, "OPÇÃO INVALIDA");
-		}
+		}																		*/
 		
 	}
 

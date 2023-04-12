@@ -38,14 +38,16 @@ public class Servico {
 		
 		
 		// CADASTRO DA MAKITA - SET
-		public Makita cadastraMakita (Makita makitaParametro) {
+		public Makita cadastraMakita () {
 			
-			makitaParametro.setCodigo(JOptionPane.showInputDialog("Digite o codigo da Makita :"));
-			makitaParametro.setMarca(JOptionPane.showInputDialog("Digite a marca da Makita : "));
-			makitaParametro.setPrecoDeCompra(Double.parseDouble(JOptionPane.showInputDialog("Digite o preço de compra da Makita : ")));
-			makitaParametro.setPrecoDeVenda(Double.parseDouble(JOptionPane.showInputDialog("Digite o preço de venda da Makita : ")));
+			Makita makita = new Makita();
 			
-			return makitaParametro;	
+			makita.setCodigo(JOptionPane.showInputDialog("Digite o codigo da Makita :"));
+			makita.setMarca(JOptionPane.showInputDialog("Digite a marca da Makita : "));
+			makita.setPrecoDeCompra(Double.parseDouble(JOptionPane.showInputDialog("Digite o preço de compra da Makita : ")));
+			makita.setPrecoDeVenda(Double.parseDouble(JOptionPane.showInputDialog("Digite o preço de venda da Makita : ")));
+			
+			return makita;	
 		}
 		
 		//EXIBE O CADASTRO DA MAKITA - GET
@@ -64,5 +66,29 @@ public class Servico {
 			
 			
 		}
+		
+		
+		
+		public void menu() {
+			
+			int escolhaOpcao = Integer.parseInt((JOptionPane.showInputDialog("Digite 1 para Furadeira e 2 para Makita")));
+			
+			Furadeira furadeira = new Furadeira();
+			
+			if (escolhaOpcao == 1) {
+				cadastroFuradeira(furadeira);
+				exibeFuradeira(furadeira);
+			}
+			
+			if (escolhaOpcao == 2) {
+				exibeMakita(cadastraMakita());
+			}
+			
+			
+		}
+		
+		
+		
+		
 	
 }
