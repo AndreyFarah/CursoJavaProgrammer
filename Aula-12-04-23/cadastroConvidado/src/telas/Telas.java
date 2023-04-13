@@ -3,7 +3,7 @@ package telas;
 import javax.swing.JOptionPane;
 
 import cadastrarConvidado.CadastrarVip;
-import entidades.ConvidadoVip;
+//import entidades.ConvidadoVip;
 
 public class Telas {
 	

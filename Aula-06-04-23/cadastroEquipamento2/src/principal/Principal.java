@@ -10,6 +10,8 @@ public class Principal {
 		TelaGrafica telagrafica = new TelaGrafica();
 		
 		telagrafica.menu();
+		
+		
 
 	}
 

@@ -71,18 +71,29 @@ public class Servico {
 		
 		public void menu() {
 			
-			int escolhaOpcao = Integer.parseInt((JOptionPane.showInputDialog("Digite 1 para Furadeira e 2 para Makita")));
+			//int escolhaOpcao; Integer.parseInt((JOptionPane.showInputDialog("Digite 1 para Furadeira e 2 para Makita")));
+			
+			
 			
 			Furadeira furadeira = new Furadeira();
+			Boolean sair = true;
 			
-			if (escolhaOpcao == 1) {
-				cadastroFuradeira(furadeira);
-				exibeFuradeira(furadeira);
-			}
-			
-			if (escolhaOpcao == 2) {
-				exibeMakita(cadastraMakita());
-			}
+			do {
+				
+				int escolhaOpcao = Integer.parseInt(JOptionPane.showInputDialog("Digite 1 para Furadeira e 2 para Makita"));
+				
+				if (escolhaOpcao == 1) {
+					cadastroFuradeira(furadeira);
+					exibeFuradeira(furadeira);
+				}
+				
+				if (escolhaOpcao == 2) {
+					exibeMakita(cadastraMakita());
+				}
+				if (escolhaOpcao == 3)
+					sair = false;
+					System.exit(0);
+			} while(sair);
 			
 			
 		}

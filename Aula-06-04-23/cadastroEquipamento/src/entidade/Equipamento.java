@@ -3,10 +3,10 @@ package entidade;
 public class Equipamento {
 
 	private	String codigo;
-	public	String marca;
-	public	double precoDeCompra;
-	public	double precoDeVenda;
-	public	double lucro;
+	private	String marca;
+	private	double precoDeCompra;
+	private	double precoDeVenda;
+	private	double lucro;
 	
 	
 	
