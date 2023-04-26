@@ -1,0 +1,3 @@
+O nome do coordenador é: andrey
+O cpf do coordendor é : 123
+O gerencia do coordendor é : teste

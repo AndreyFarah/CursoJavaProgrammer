@@ -12,17 +12,19 @@ public class ControladorTelaPrincipal implements ActionListener{
 
 		//INVOCA A CLASSE
 		TelaPrincipalCoordenacao telaPrincipalCoordenacao = new TelaPrincipalCoordenacao();
+		TelaPrincipalAtendente telaPrincipalAtendente = new TelaPrincipalAtendente();
 		
 	
 		//OBJETOS DA CLASSE 
 		JTextField jtextRespostaRecebido;
+		JFrame jframeRecebidoTelaPrincipal;
 	
 		
 		//CRIA O CONSTRUTOR E ESPERAR RECEBER OS PARAMETROS EM ( ) 
-		public ControladorTelaPrincipal(JTextField jtextResposta) { 
+		public ControladorTelaPrincipal(JTextField jtextResposta, JFrame jframeRecebido) { 
 				
 			this.jtextRespostaRecebido = jtextResposta; 		//O PARAMETRO RECEBIDO EM textResposta É ATRIBUIDO NA VARIAVEL LOCAL
-			
+			this.jframeRecebidoTelaPrincipal = jframeRecebido;
 		}
 		
 		
@@ -37,7 +39,13 @@ public class ControladorTelaPrincipal implements ActionListener{
 				switch (textoResposta) {
 				case "1": 
 						telaPrincipalCoordenacao.menuCoordenacao();	
-				
+						jframeRecebidoTelaPrincipal.setVisible(false);
+						break;
+						
+				case "2":
+						telaPrincipalAtendente.menuPrincipalAtendente();
+						jframeRecebidoTelaPrincipal.setVisible(false);
+						
 				}
 				
 				

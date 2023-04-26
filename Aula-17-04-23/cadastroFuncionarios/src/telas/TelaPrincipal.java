@@ -44,7 +44,7 @@ public class TelaPrincipal {
 		
 		
 		//CRIAR O CONSTRUTOR contralatelaprincipal para fazer o envio dos parametros desta classe para outra
-		ControladorTelaPrincipal controlaTelaPrincipal = new ControladorTelaPrincipal(textOpcaoEscolhida);
+		ControladorTelaPrincipal controlaTelaPrincipal = new ControladorTelaPrincipal(textOpcaoEscolhida, frameMenuPrincipal);
 		botaoEnviar.addActionListener(controlaTelaPrincipal); // INDICA QUE O ACTION LISTER TA DENTRO DE CONTROLADORTELA PRINCIPAL EM CONTROLATELAPRINCIPAL
 		
 	}

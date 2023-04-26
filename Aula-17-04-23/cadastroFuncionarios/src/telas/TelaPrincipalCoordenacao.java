@@ -34,6 +34,8 @@ public class TelaPrincipalCoordenacao {
 		frameMenuPrincipalCoordenacao.add(panelMenuPrincipalCoordenacao);
 		frameMenuPrincipalCoordenacao.setVisible(true);
 		
+		ControladorTelaPrincipalCoordenacao controlaTelaPrincipalCoordenacao = new ControladorTelaPrincipalCoordenacao(textResposta, frameMenuPrincipalCoordenacao);
+		botaoEnviar.addActionListener(controlaTelaPrincipalCoordenacao);
 		
 	}
 
