@@ -8,9 +8,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import controlador.ControladorTelaCadastroConvidado;
+import repositorio.RepositorioConvidado;
+
 public class TelaCadastroConvidado {
 	
-	public void menuCadastroConvidado () {
+	public void menuCadastroConvidado (JFrame menuPrincipalRecebido, RepositorioConvidado repositorioConvidado) {
 		
 		String nome = "Digite o nome";
 		String convite = "Convite VIP ou PISTA";
@@ -52,9 +55,12 @@ public class TelaCadastroConvidado {
 		JTextField textProfissao = new JTextField();
 		panelCadastroConvidado.add(textProfissao);
 		
-		JButton botaoEnviarCadastro = new JButton();
+		JButton botaoEnviarCadastro = new JButton("Enviar Cadastro");
 		panelCadastroConvidado.add(botaoEnviarCadastro);
 		
+		
+		ControladorTelaCadastroConvidado controladorTelaCadastroConvidado = new ControladorTelaCadastroConvidado(textNome, textConvite, textEndereco, textProfissao, frameMenuCadastroConvidado, menuPrincipalRecebido, repositorioConvidado);
+		botaoEnviarCadastro.addActionListener(controladorTelaCadastroConvidado);
 		
 		
 		frameMenuCadastroConvidado.add(panelCadastroConvidado);

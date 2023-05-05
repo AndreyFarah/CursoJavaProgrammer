@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import controlador.ControladorTelaMenuPrincipal;
+
 public class TelaMenuPrincipal {
 	
 	public void menuPrincipal (){
@@ -16,7 +18,7 @@ public class TelaMenuPrincipal {
 		String opcao2 = "Digite 2 para Listar Convidado";
 		
 		JFrame frameMenuPrincipal = new JFrame();
-		frameMenuPrincipal.setSize(400,400);
+		frameMenuPrincipal.setSize(350,200);
 		frameMenuPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameMenuPrincipal.setTitle("Cadastrar Convidado");
 		
@@ -31,11 +33,15 @@ public class TelaMenuPrincipal {
 		JLabel labelOpcao2 = new JLabel(opcao2);
 		panelMenuPrincipal.add(labelOpcao2);
 		
-		JTextField textOpcao = new JTextField(10);
-		panelMenuPrincipal.add(textOpcao);
+		JTextField textResposta = new JTextField(10);
+		panelMenuPrincipal.add(textResposta);
 		
 		JButton botaoEnviarOpcao = new JButton("Enviar");
 		panelMenuPrincipal.add(botaoEnviarOpcao);
+		
+		ControladorTelaMenuPrincipal controladorTelaMenuPrincipal = new ControladorTelaMenuPrincipal(textResposta, frameMenuPrincipal);
+		botaoEnviarOpcao.addActionListener(controladorTelaMenuPrincipal);
+		
 		
 		
 		frameMenuPrincipal.add(panelMenuPrincipal);
