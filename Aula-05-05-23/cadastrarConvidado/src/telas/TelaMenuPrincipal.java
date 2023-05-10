@@ -16,6 +16,9 @@ public class TelaMenuPrincipal {
 		
 		String opcao1 = "Digite 1 para Cadastrar Convidado";
 		String opcao2 = "Digite 2 para Listar Convidado";
+		String opcao3 = "Digite 3 para Deletar Convidado";
+		String opcao4 = "Digite 4 para Atualizar Convidado";
+		
 		
 		JFrame frameMenuPrincipal = new JFrame();
 		frameMenuPrincipal.setSize(350,200);
@@ -32,6 +35,12 @@ public class TelaMenuPrincipal {
 		
 		JLabel labelOpcao2 = new JLabel(opcao2);
 		panelMenuPrincipal.add(labelOpcao2);
+		
+		JLabel labelOpcao3 = new JLabel(opcao3);
+		panelMenuPrincipal.add(labelOpcao3);
+		
+		JLabel labelOpcao4 = new JLabel(opcao4);
+		panelMenuPrincipal.add(labelOpcao4);
 		
 		JTextField textResposta = new JTextField(10);
 		panelMenuPrincipal.add(textResposta);

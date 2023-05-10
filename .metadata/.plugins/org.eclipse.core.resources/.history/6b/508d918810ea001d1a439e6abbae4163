@@ -1,0 +1,42 @@
+package telas;
+
+import java.util.List;
+
+import entidade.JogadorFutebol;
+
+public class TelaListarJogador {
+
+	public void listarJogador (List<JogadorFutebol> listaJogador) {
+		
+		int qtdLinhas = listaJogador.size(); // Quantidade de linhas da Tabela
+		
+		String [][] tabelaString = new String [qtdLinhas][3];
+		
+		int posicaoColuna = 0;
+		int posicaoLinha = 0;
+		
+		for (JogadorFutebol jogadorFutebol : listaJogador) {
+			
+			tabelaString[posicaoLinha][posicaoColuna] = jogadorFutebol.getNome();
+			
+			posicaoColuna++;
+			
+			tabelaString[posicaoLinha][posicaoColuna] = jogadorFutebol.getCpf();
+			
+			posicaoColuna++;
+			
+			tabelaString[posicaoLinha][posicaoColuna] = jogadorFutebol.getIdade();
+			
+			posicaoColuna++;
+			
+			tabelaString[posicaoLinha][posicaoColuna] = jogadorFutebol.getNome();
+			
+			posicaoColuna = 0;
+			
+		}
+		
+		
+	}
+	
+	
+}

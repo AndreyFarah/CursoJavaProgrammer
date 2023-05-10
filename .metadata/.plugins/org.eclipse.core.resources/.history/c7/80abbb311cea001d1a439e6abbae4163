@@ -1,0 +1,10 @@
+package telas;
+
+public class TelaCadastroJogador {
+	
+	public void criarTelaCadastroJogador () {
+		
+		System.out.println("tela cadastro");
+	}
+
+}

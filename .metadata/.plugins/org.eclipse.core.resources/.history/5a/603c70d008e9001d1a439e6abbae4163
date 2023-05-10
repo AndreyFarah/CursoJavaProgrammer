@@ -1,0 +1,25 @@
+package warmup1;
+
+public class StartHi {
+
+	public static void main(String[] args) {
+		
+		
+		System.out.println(startHi("hi there"));
+		
+		
+	}
+	
+	public static boolean startHi(String str) {
+		
+		String s = str.substring(0,2);
+		System.out.println(s);
+		
+		if (s == 'hi') {
+			return true;
+		}
+		
+		return false;
+	}
+	
+}

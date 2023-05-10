@@ -1,0 +1,72 @@
+package telas;
+
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+import controlador.ControladorListarConvidado;
+import entidades.Convidado;
+
+public class TelaDeletarConvidado {
+	
+	public  void deletarConvidado (List<Convidado> listaConvidado, JFrame frameMenuPrincipal) {
+		
+		int qtdLinhas = listaConvidado.size();
+		
+		int posicaoLinha = 0;
+		int posicaoColuna = 0;
+		
+		String [][] tabelaStringConvidado = new String [qtdLinhas][4];
+		
+		for (Convidado convidado : listaConvidado) {
+			
+			tabelaStringConvidado[posicaoLinha][posicaoColuna] = convidado.getNome();
+			posicaoColuna++;
+			
+			tabelaStringConvidado[posicaoLinha][posicaoColuna] = convidado.getConvite();
+			posicaoColuna++;
+			
+			tabelaStringConvidado[posicaoLinha][posicaoColuna] = convidado.getEndereco();
+			posicaoColuna++;
+			
+			tabelaStringConvidado[posicaoLinha][posicaoColuna] = convidado.getProfissao();
+			
+			posicaoColuna = 0;
+			posicaoLinha++;		
+		}
+		
+		String nomesColunas[] = {"NOME", "CONVITE", "ENDEREÇO","PROFISSAO"};
+		
+		JFrame frameListarConvidado = new JFrame();
+		frameListarConvidado.setSize(500,600);
+		
+		JTable jtableConvidado = new JTable(tabelaStringConvidado, nomesColunas);
+		
+		jtableConvidado.setBounds(30,40,300,300);
+		JScrollPane scrollPaneListarConvidado = new JScrollPane(jtableConvidado);
+		
+		JPanel panelListarConvidado = new JPanel();
+		panelListarConvidado.add(scrollPaneListarConvidado);
+		
+		JButton botaoVoltarMenuPrincipal = new JButton("Deletar Convidado");
+		panelListarConvidado.add(botaoVoltarMenuPrincipal);
+		
+
+		
+		
+		frameListarConvidado.add(panelListarConvidado);
+		frameListarConvidado.setVisible(true);
+		
+		
+		
+		
+			
+	}
+		
+	
+
+}

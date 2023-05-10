@@ -11,16 +11,19 @@ import javax.swing.JTextField;
 import entidades.Convidado;
 import repositorio.RepositorioConvidado;
 import telas.TelaCadastroConvidado;
+import telas.TelaDeletarConvidado;
 import telas.TelaListarConvidado;
 
 public class ControladorTelaMenuPrincipal implements ActionListener {
 
 		//INSTACIA DE OBJETOS
 		TelaCadastroConvidado telaCadastroConvidado = new TelaCadastroConvidado(); //PARA CHAMAR O MENU CADASTRO DE CONVIDADO CASO OPÇÃO 1
+		TelaListarConvidado telaListarConvidado = new  TelaListarConvidado();
+		TelaDeletarConvidado telaDeletarConvidado = new TelaDeletarConvidado();
 		
 		RepositorioConvidado repositorioConvidado = new RepositorioConvidado();
 		
-		TelaListarConvidado telaListarConvidado = new  TelaListarConvidado();
+	
 	
 		//INFORMAÇÕES RECEBIDAS DA TELAMENUPRINCIPAL E ARMAZENDAS NA VARIAVEL LOCAL
 		JTextField respostaMenuPrincipal;
@@ -38,7 +41,7 @@ public class ControladorTelaMenuPrincipal implements ActionListener {
 		
 			String respostaRecebida = respostaMenuPrincipal.getText();
 			
-			if (respostaRecebida.equals("1") || respostaRecebida.equals("2")) {
+			if (respostaRecebida.equals("1") || respostaRecebida.equals("2") || respostaRecebida.equals("3")) {
 				
 				switch (respostaRecebida) {
 					case "1":
@@ -48,6 +51,10 @@ public class ControladorTelaMenuPrincipal implements ActionListener {
 					case "2":
 						//listarTeste(repositorioJogador.retornaConvidados());
 						telaListarConvidado.listarConvidado(repositorioConvidado.retornaConvidados(),frameMenuPrincipal );
+						frameMenuPrincipal.setVisible(false);
+						break;
+					case "3":
+						telaDeletarConvidado.deletarConvidado(repositorioConvidado.retornaConvidados(),frameMenuPrincipal, repositorioConvidado);
 						frameMenuPrincipal.setVisible(false);
 						break;
 				}

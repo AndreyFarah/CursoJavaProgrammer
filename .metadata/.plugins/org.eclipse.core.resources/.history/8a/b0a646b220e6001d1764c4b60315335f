@@ -1,0 +1,12 @@
+package entidade;
+
+public class JogadorFutebol {
+	
+	private String nome;
+	private String cpf;
+	private String idade;
+	private double salario;
+	
+	
+
+}

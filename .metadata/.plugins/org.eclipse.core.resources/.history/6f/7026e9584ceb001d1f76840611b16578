@@ -1,0 +1,11 @@
+package entidades;
+
+public class Convidado {
+
+	private String nome;
+	private String convite;
+	private String endereco;
+	private String profissao;
+	
+	
+}

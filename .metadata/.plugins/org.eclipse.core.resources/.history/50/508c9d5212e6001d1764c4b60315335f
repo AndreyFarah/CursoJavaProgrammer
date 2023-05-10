@@ -1,0 +1,11 @@
+package verificaMaiuscula;
+
+public class VerificaMaiuscula {
+	
+	public static boolean verificaCaracter (String s) {
+		
+		
+		return true;
+	}
+
+}

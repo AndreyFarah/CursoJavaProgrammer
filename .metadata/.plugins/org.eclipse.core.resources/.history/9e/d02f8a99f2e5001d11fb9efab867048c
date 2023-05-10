@@ -1,0 +1,28 @@
+package warmup1;
+
+public class CaracterMaiusculo {
+
+	public static void main(String[] args) {
+		//	PT: Escreva uma função ou método, que receba uma string como parâmetro e responda se seu primeiro caractere é maiúsculo ou não.
+		//	bool IsFirstUpper(string s)
+		System.out.println(IsFirstUpper("Andrey"));
+	}
+
+	public static boolean IsFirstUpper (String s) {
+		
+		boolean msg;
+		
+		char [] texto = s.toCharArray();
+		
+		if (texto[0] == 'A') {
+			
+			msg = true;
+			return msg;
+		}
+		msg = false;
+		return false;
+		
+	}
+	
+}
+

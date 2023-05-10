@@ -1,0 +1,38 @@
+package controlador;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+public class ControladorTelaCadastroConvidado implements ActionListener{
+	
+		JTextField nomeRecebido;
+		JTextField conviteRecebido;
+		JTextField enderecoRecebido;
+		JTextField profissaoRecebido;
+		JFrame	frameCadastroConvidadoRecebido;
+		
+	
+		public ControladorTelaCadastroConvidado(JTextField nomeRecebido, JTextField conviteRecebido,
+				JTextField enderecoRecebido, JTextField profissaoRecebido, JFrame frameCadastroConvidadoRecebido) {
+			this.nomeRecebido = nomeRecebido;
+			this.conviteRecebido = conviteRecebido;
+			this.enderecoRecebido = enderecoRecebido;
+			this.profissaoRecebido = profissaoRecebido;
+			this.frameCadastroConvidadoRecebido = frameCadastroConvidadoRecebido;
+		}
+	
+	
+	
+	
+	
+	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("chegueiii");
+			
+	}
+
+}

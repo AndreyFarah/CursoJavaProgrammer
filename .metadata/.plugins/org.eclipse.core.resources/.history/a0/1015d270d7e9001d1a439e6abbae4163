@@ -1,0 +1,32 @@
+package principal;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import menu.MenuPrincipal;
+
+public class Principal {
+		
+	public static void main (String[] args) {
+		
+	//	MenuPrincipal menuPrincipal = new MenuPrincipal();
+		
+	//	menuPrincipal.chamarMenuPrincipal();
+		
+		Pessoa pessoa1 = new Pessoa ("Andrey", "031");
+		Pessoa pessoa2 = new Pessoa ("Pessoa2", "cpf2");
+		Pessoa pessoa3 = new Pessoa ("Pessoa3", "cpf3");
+		
+		//System.out.println(pessoa1);
+		
+		List<Pessoa> listaPessoas = new ArrayList<>();
+		
+		listaPessoas.add(pessoa1);
+		
+		System.out.println("Rodou");
+		
+		
+		
+	}
+	
+}

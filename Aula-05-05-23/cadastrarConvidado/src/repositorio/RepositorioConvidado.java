@@ -22,4 +22,35 @@ public class RepositorioConvidado implements InterfaceConvidado{
 			return listaConvidados;
 		}
 
+
+		@Override
+		public boolean deletarConvidado(Convidado convidado) {
+			
+			boolean resultado;
+			
+			try {
+				listaConvidados.remove(convidado);
+				resultado = true;
+				
+			} catch (Exception e) {
+				resultado = false;
+			}
+			
+			
+			return resultado;
+		}
+
+
+		@Override
+		public Convidado buscarConvidado(String nome) {
+			
+			for (Convidado convidadoVerificado : retornaConvidados()) {
+				if(convidadoVerificado.getNome().equals(nome)) {
+					
+					return convidadoVerificado;
+				}
+			}
+			return null;
+		}
+
 }

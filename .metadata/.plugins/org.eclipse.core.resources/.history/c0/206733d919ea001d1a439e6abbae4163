@@ -1,0 +1,12 @@
+package telas;
+
+public class TelaMenuJogador {
+	
+	
+	public void telaMenuJogador () {
+		
+		System.out.println("Chamou o método");
+		
+	}
+
+}

@@ -1,0 +1,19 @@
+package repositorio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import entidades.Convidado;
+
+public class RepositorioJogador implements InterfaceConvidado{
+
+		List<Convidado> listaConvidados = new ArrayList<>();
+	
+	
+		@Override
+		public void salvarConvidado(Convidado convidadoCadastrado) {
+			listaConvidados.add(convidadoCadastrado);
+			
+		}
+
+}

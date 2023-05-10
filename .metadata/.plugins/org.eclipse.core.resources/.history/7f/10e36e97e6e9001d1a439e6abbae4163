@@ -1,0 +1,32 @@
+package controlador;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextField;
+
+public class ControladorMenuCadastroPessoa implements ActionListener {
+
+	
+	JTextField nomeRecebido;
+	JTextField cpfRecebido;
+	
+	public ControladorMenuCadastroPessoa(JTextField nomeRecebido, JTextField cpfRecebido) {
+		super();
+		this.nomeRecebido = nomeRecebido;
+		this.cpfRecebido = cpfRecebido;
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		System.out.println("botao Funcionou ");
+		
+	}
+
+	
+	
+	
+	
+	
+}

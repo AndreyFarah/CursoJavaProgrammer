@@ -1,0 +1,26 @@
+package warmup1;
+
+public class BackAround {
+	
+	public static void main (String[] args) {
+			
+		System.out.println(backAround("a"));
+		
+		String palavra = "cat";
+		
+		if (palavra.length() > 1) {
+			palavra = palavra.substring(palavra.length()-1) + palavra + palavra.substring(palavra.length()-1);
+			System.out.println(palavra);
+		}else
+			System.out.println(palavra+palavra+palavra);
+		
+	}
+
+	public static String backAround(String str) {
+		
+		if (str.length() > 1) {
+			return  str.substring(str.length()-1) + str + str.substring(str.length()-1);
+	}		
+		return str+str+str;
+	}
+}

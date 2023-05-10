@@ -1,0 +1,40 @@
+package curso_programacao;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Digite o total de minutos");
+		int dia = sc.nextInt();
+		String diasemana;
+		
+		switch (dia) {
+		case 1 : 
+			diasemana = "domingo";
+			break;
+		case 2 : 
+			diasemana ="segunda";
+			break;
+		case 3 :
+			diasemana = "terça";
+			break;
+		case 4 :
+			diasemana = "quarta";
+			break;
+		case 5 :
+			diasemana = "quinta";
+			break;
+		default :
+			diasemana = "valor invalido";
+			break;
+		}
+		
+		System.out.println(diasemana);
+		
+	}
+
+}

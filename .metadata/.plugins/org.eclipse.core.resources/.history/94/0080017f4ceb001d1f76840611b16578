@@ -1,0 +1,71 @@
+package telas;
+
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class TelaMenuPrincipal {
+	
+	public void abrirMenuPrincipal () {
+		
+		String nome = "Digite o nome";
+		String convite = "Convite VIP ou PISTA";
+		String endereco = "Informe o endereço";
+		String profissao = "Informe a profissao";
+		
+		
+		JFrame frameMenuPrincipal = new JFrame();
+		frameMenuPrincipal.setSize(400,200);
+		frameMenuPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frameMenuPrincipal.setTitle("Cadastrar Convidado");
+		
+		GridLayout grid = new GridLayout(0,1);
+		
+		JPanel panelMenuPrincipal = new JPanel();
+		panelMenuPrincipal.setLayout(grid);
+		
+		JLabel labelNome = new JLabel(nome);
+		panelMenuPrincipal.add(labelNome);
+		
+		JTextField textNome = new JTextField(10);
+		panelMenuPrincipal.add(textNome);
+		
+		JLabel labelConvite = new JLabel(convite);
+		panelMenuPrincipal.add(labelConvite);
+		
+		JTextField textConvite = new JTextField(10);
+		panelMenuPrincipal.add(textConvite);
+		
+		JLabel labelEndereco = new JLabel(endereco);
+		panelMenuPrincipal.add(labelEndereco);
+		
+		JTextField textEndereco = new JTextField(10);
+		panelMenuPrincipal.add(textEndereco);
+		
+		JLabel labelProfissao = new JLabel(profissao);
+		panelMenuPrincipal.add(labelProfissao);
+		
+		JTextField textProfissao = new JTextField();
+		panelMenuPrincipal.add(textProfissao);
+		
+		JButton botaoEnviarCadastro = new JButton();
+		panelMenuPrincipal.add(botaoEnviarCadastro);
+		
+		
+		
+		frameMenuPrincipal.add(panelMenuPrincipal);
+		frameMenuPrincipal.setVisible(true);
+
+		
+		
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,57 @@
+package controlador;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+import repositorio.RepositorioJogador;
+import telas.TelaCadastroConvidado;
+
+public class ControladorTelaMenuPrincipal implements ActionListener {
+
+		//INSTACIA DE OBJETOS
+		TelaCadastroConvidado telaCadastroConvidado = new TelaCadastroConvidado(); //PARA CHAMAR O MENU CADASTRO DE CONVIDADO CASO OPÇÃO 1
+		
+		RepositorioJogador repositorioJogador = new RepositorioJogador();
+	
+		//INFORMAÇÕES RECEBIDAS DA TELAMENUPRINCIPAL E ARMAZENDAS NA VARIAVEL LOCAL
+		JTextField respostaMenuPrincipal;
+		JFrame frameMenuPrincipal;
+		
+		//CONSTRUTOR PARA RECEBER AS INSFORMAÇÕES DA TELAMENUPRINCIPAL
+		public ControladorTelaMenuPrincipal(JTextField respostaMenuPrincipal, JFrame frameMenuPrincipal) {
+			this.respostaMenuPrincipal = respostaMenuPrincipal;
+			this.frameMenuPrincipal = frameMenuPrincipal;
+		}
+
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		
+			String respostaRecebida = respostaMenuPrincipal.getText();
+			
+			if (respostaRecebida.equals("1") || respostaRecebida.equals("2")) {
+				
+				switch (respostaRecebida) {
+					case "1":
+						telaCadastroConvidado.menuCadastroConvidado(frameMenuPrincipal, repositorioJogador);
+						frameMenuPrincipal.setVisible(false);
+						break;
+					case "2":
+						System.out.println("Listar");
+						break;
+				}
+			} else {
+				JOptionPane.showMessageDialog(null, "OPÇÃO INVALIDA");
+			}
+			
+			
+			
+		}
+		
+	
+
+}

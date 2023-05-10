@@ -1,0 +1,21 @@
+package principal;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String [] nomes = new String [5];
+		nomes[0] = "Goku";
+		nomes[1] = "Maria"; 
+		nomes[2] = "Joao";
+		nomes[3] = "Eric"; 
+		nomes[0] = "Greice";
+		
+		
+		System.out.println(nomes[0]);
+		
+		
+		
+	}
+
+}

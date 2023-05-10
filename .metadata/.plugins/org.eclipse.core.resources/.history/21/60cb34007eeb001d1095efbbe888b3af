@@ -1,0 +1,36 @@
+package curso_programacao;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		int codigo, quantidade;
+		
+		System.out.println("Digite o código");
+		codigo = Integer.parseInt(entrada.nextLine());
+		
+		System.out.println("Digite a quantidade");
+		quantidade = Integer.parseInt(entrada.nextLine());
+		
+		if (codigo == 1) {
+			System.out.println("Cachoro quente $4,00: x " + quantidade + "total :" + quantidade*4 );
+		}
+		else if (codigo == 2) {
+			System.out.println("X-Salada $5: x " + quantidade + "total : " +quantidade*5);
+		}
+		else if (codigo == 3) {
+			System.out.println("X Bacon $4.5: x " + quantidade + "total " + quantidade*4.5);
+		} else {
+			System.out.println("Opção invalida");
+		}
+		
+		
+		
+		
+	}
+
+}
