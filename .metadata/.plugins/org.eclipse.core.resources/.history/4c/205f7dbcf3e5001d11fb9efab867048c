@@ -1,9 +1,0 @@
-package warmup1;
-
-public class VerificaMaiuscula {
-
-	 public boolean execVerifica (String s) {
-		 
-		 
-	 }
-}
