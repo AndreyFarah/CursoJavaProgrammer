@@ -4,22 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entidades.Convidado;
+import persistencia.ConvidadoDao;
 
 public class RepositorioConvidado implements InterfaceConvidado{
 
 		List<Convidado> listaConvidados = new ArrayList<>();
+		ConvidadoDao convidadoDao = new ConvidadoDao();
 	
 	
 		@Override
 		public void salvarConvidado(Convidado convidadoCadastrado) {
-			listaConvidados.add(convidadoCadastrado);
+			//listaConvidados.add(convidadoCadastrado); ## USANDO LISTA
+			convidadoDao.salvarConviadoBanco(convidadoCadastrado);
 			
 		}
 
 
 		@Override
 		public List<Convidado> retornaConvidados() {
-			return listaConvidados;
+			
+			return convidadoDao.buscarConvidadoBanco();
+			
+			//return listaConvidados;
 		}
 
 
@@ -28,6 +34,8 @@ public class RepositorioConvidado implements InterfaceConvidado{
 			
 			boolean resultado;
 			
+			resultado = convidadoDao.deletarConvidadoBanco(convidado.getNome());
+		/*	 ###### PARA LISTA
 			try {
 				listaConvidados.remove(convidado);
 				resultado = true;
@@ -35,7 +43,7 @@ public class RepositorioConvidado implements InterfaceConvidado{
 			} catch (Exception e) {
 				resultado = false;
 			}
-			
+		*/	
 			
 			return resultado;
 		}
