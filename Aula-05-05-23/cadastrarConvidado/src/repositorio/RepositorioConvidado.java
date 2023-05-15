@@ -53,4 +53,14 @@ public class RepositorioConvidado implements InterfaceConvidado{
 			return null;
 		}
 
+
+		@Override
+		public void alterarConvidado(Convidado convidadoAtual, Convidado convidadoNovo) {
+			
+			listaConvidados.remove(convidadoAtual);
+			listaConvidados.add(convidadoNovo);
+			
+			
+		}
+
 }
