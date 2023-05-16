@@ -15,10 +15,12 @@ public class TelaCadastroConvidado {
 	
 	public void menuCadastroConvidado (JFrame menuPrincipalRecebido, RepositorioConvidado repositorioConvidado) {
 		
+		String cpf = "Informe o CPF";
 		String nome = "Digite o nome";
 		String convite = "Convite VIP ou PISTA";
 		String endereco = "Informe o endereço";
 		String profissao = "Informe a profissao";
+		String email = "Informe o Email";
 		
 		
 		JFrame frameMenuCadastroConvidado = new JFrame();
@@ -30,6 +32,12 @@ public class TelaCadastroConvidado {
 		
 		JPanel panelCadastroConvidado = new JPanel();
 		panelCadastroConvidado.setLayout(grid);
+		
+		JLabel labelCpf = new JLabel(cpf);
+		panelCadastroConvidado.add(labelCpf);
+		
+		JTextField textCpf = new JTextField(10);
+		panelCadastroConvidado.add(textCpf);
 		
 		JLabel labelNome = new JLabel(nome);
 		panelCadastroConvidado.add(labelNome);
@@ -55,11 +63,17 @@ public class TelaCadastroConvidado {
 		JTextField textProfissao = new JTextField();
 		panelCadastroConvidado.add(textProfissao);
 		
+		JLabel labelEmail = new JLabel(email);
+		panelCadastroConvidado.add(labelEmail);
+		
+		JTextField textEmail = new JTextField();
+		panelCadastroConvidado.add(textEmail);
+		
 		JButton botaoEnviarCadastro = new JButton("Enviar Cadastro");
 		panelCadastroConvidado.add(botaoEnviarCadastro);
 		
 		
-		ControladorTelaCadastroConvidado controladorTelaCadastroConvidado = new ControladorTelaCadastroConvidado(textNome, textConvite, textEndereco, textProfissao, frameMenuCadastroConvidado, menuPrincipalRecebido, repositorioConvidado);
+		ControladorTelaCadastroConvidado controladorTelaCadastroConvidado = new ControladorTelaCadastroConvidado(textNome, textConvite, textEndereco, textProfissao, frameMenuCadastroConvidado, menuPrincipalRecebido, repositorioConvidado, textEmail, textCpf);
 		botaoEnviarCadastro.addActionListener(controladorTelaCadastroConvidado);
 		
 		

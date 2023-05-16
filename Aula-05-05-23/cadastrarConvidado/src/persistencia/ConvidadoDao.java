@@ -17,7 +17,7 @@ public class ConvidadoDao {
 		
 		boolean salvar = false;
 	
-		String comandoSqlInsert = "insert into tabela_convidado (nome, convite, endereco, profissao) values (?,?,?,?)"; //COMANDO INSERT DO MYSQL COM ? NOS VALORES
+		String comandoSqlInsert = "insert into tabela_convidado (cpf, nome, convite, endereco, profissao, email) values (?,?,?,?,?,?)"; //COMANDO INSERT DO MYSQL COM ? NOS VALORES
 		
 		Connection conexaoCriada = null;
 		
@@ -28,10 +28,12 @@ public class ConvidadoDao {
 			
 			declaracaoComando = (PreparedStatement)conexaoCriada.prepareStatement(comandoSqlInsert); //PREPARAÇÃO DO COMANDO RECEBE O BANCO E O COMANDO SQL
 			
-			declaracaoComando.setString(1, convidado.getNome());
-			declaracaoComando.setString(2, convidado.getConvite());
-			declaracaoComando.setString(3, convidado.getEndereco());
-			declaracaoComando.setString(4, convidado.getProfissao());
+			declaracaoComando.setString(1, convidado.getCpf());
+			declaracaoComando.setString(2, convidado.getNome());
+			declaracaoComando.setString(3, convidado.getConvite());
+			declaracaoComando.setString(4, convidado.getEndereco());
+			declaracaoComando.setString(5, convidado.getProfissao());
+			declaracaoComando.setString(6, convidado.getEmail());
 			
 			declaracaoComando.execute();
 			
@@ -64,13 +66,13 @@ public class ConvidadoDao {
 	}
 	
 	
-	public boolean deletarConvidadoBanco (String nome) {
+	public boolean deletarConvidadoBanco (String cpf) {
 		
 		FabricaConexao fabricaConexao = new FabricaConexao();
 		
 		boolean excluir = false;	
 		
-		String comandoSqlDeletar = "delete from tabela_convidado where nome = ?";
+		String comandoSqlDeletar = "delete from tabela_convidado where cpf = ?";
 		
 		
 		Connection conexaoCriada = null;
@@ -82,7 +84,7 @@ public class ConvidadoDao {
 			
 			declaracaoComando = (PreparedStatement)conexaoCriada.prepareStatement(comandoSqlDeletar); //PREPARAÇÃO DO COMANDO RECEBE O BANCO E O COMANDO SQL
 			
-			declaracaoComando.setString(1, nome);
+			declaracaoComando.setString(1, cpf);
 			
 			declaracaoComando.execute();
 			
@@ -138,10 +140,12 @@ public class ConvidadoDao {
 			while (resultadoTabela.next()) {
 				Convidado convidado = new Convidado();
 				
+				convidado.setCpf(resultadoTabela.getString("cpf"));
 				convidado.setNome(resultadoTabela.getString("nome"));
 				convidado.setConvite(resultadoTabela.getString("convite"));
 				convidado.setEndereco(resultadoTabela.getString("endereco"));
 				convidado.setProfissao(resultadoTabela.getString("profissao"));
+				convidado.setEmail(resultadoTabela.getString("email"));
 				
 				listaConvidadoBanco.add(convidado);
 				

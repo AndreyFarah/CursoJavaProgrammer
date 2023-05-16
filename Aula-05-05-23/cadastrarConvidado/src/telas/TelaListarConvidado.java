@@ -20,9 +20,12 @@ public class TelaListarConvidado {
 		int posicaoLinha = 0;
 		int posicaoColuna = 0;
 		
-		String [][] tabelaStringConvidado = new String [qtdLinhas][4];
+		String [][] tabelaStringConvidado = new String [qtdLinhas][6];
 		
 		for (Convidado convidado : listaConvidado) {
+			
+			tabelaStringConvidado[posicaoLinha][posicaoColuna] = convidado.getCpf();
+			posicaoColuna++;
 			
 			tabelaStringConvidado[posicaoLinha][posicaoColuna] = convidado.getNome();
 			posicaoColuna++;
@@ -34,12 +37,15 @@ public class TelaListarConvidado {
 			posicaoColuna++;
 			
 			tabelaStringConvidado[posicaoLinha][posicaoColuna] = convidado.getProfissao();
+			posicaoColuna++;
+			
+			tabelaStringConvidado[posicaoLinha][posicaoColuna] = convidado.getEmail();
 			
 			posicaoColuna = 0;
 			posicaoLinha++;		
 		}
 		
-		String nomesColunas[] = {"NOME", "CONVITE", "ENDEREÇO","PROFISSAO"};
+		String nomesColunas[] = {"CPF","NOME", "CONVITE", "ENDEREÇO","PROFISSAO", "E-MAIL"};
 		
 		JFrame frameListarConvidado = new JFrame();
 		frameListarConvidado.setSize(500,600);

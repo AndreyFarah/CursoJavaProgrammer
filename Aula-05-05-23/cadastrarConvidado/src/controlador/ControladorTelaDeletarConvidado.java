@@ -15,16 +15,16 @@ public class ControladorTelaDeletarConvidado implements ActionListener{
 	JFrame frameMenuPrincipalRecebido;
 	JFrame	frameDeletarRecebido;
 	RepositorioConvidado repositorioConvidadoRecebido;
-	JTextField textNomeRecebido;
+	JTextField txtCpfDeleteRecebido;
 	
 	
 	
 	public ControladorTelaDeletarConvidado(JFrame frameMenuPrincipalRecebido, JFrame frameDeletarRecebido,
-			RepositorioConvidado repositorioConvidado, JTextField textNomeRecebido) {
+			RepositorioConvidado repositorioConvidado, JTextField txtCpfDeleteRecebido) {
 		this.frameMenuPrincipalRecebido = frameMenuPrincipalRecebido;
 		this.frameDeletarRecebido = frameDeletarRecebido;
 		this.repositorioConvidadoRecebido = repositorioConvidado;
-		this.textNomeRecebido = textNomeRecebido;
+		this.txtCpfDeleteRecebido = txtCpfDeleteRecebido;
 	}
 
 
@@ -33,7 +33,7 @@ public class ControladorTelaDeletarConvidado implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// Convidado convidadoDelete = repositorioConvidadoRecebido.buscarConvidado(textNomeRecebido.getText());
 		Convidado convidadoDelete = new Convidado();
-		convidadoDelete = repositorioConvidadoRecebido.buscarConvidado(textNomeRecebido.getText());
+		convidadoDelete = repositorioConvidadoRecebido.buscarConvidado(txtCpfDeleteRecebido.getText());
 		
 		if (convidadoDelete != null) {
 			repositorioConvidadoRecebido.deletarConvidado(convidadoDelete);
