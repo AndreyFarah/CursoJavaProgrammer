@@ -16,15 +16,15 @@ public class ControladorTelaAtualizarConvidado implements ActionListener{
 	JFrame frameMenuPrincipalRecebido;
 	JFrame	frameAtualizarRecebido;
 	RepositorioConvidado repositorioConvidadoRecebido;
-	JTextField textNomeRecebido;
+	JTextField textCpfRecebido;
 	
 	
 	public ControladorTelaAtualizarConvidado(JFrame frameMenuPrincipalRecebido, JFrame frameAtualizarRecebido,
-			RepositorioConvidado repositorioConvidadoRecebido, JTextField textNomeRecebido) {
+			RepositorioConvidado repositorioConvidadoRecebido, JTextField textCpfRecebido) {
 		this.frameMenuPrincipalRecebido = frameMenuPrincipalRecebido;
 		this.frameAtualizarRecebido = frameAtualizarRecebido;
 		this.repositorioConvidadoRecebido = repositorioConvidadoRecebido;
-		this.textNomeRecebido = textNomeRecebido;
+		this.textCpfRecebido = textCpfRecebido;
 	}
 
 
@@ -39,7 +39,7 @@ public class ControladorTelaAtualizarConvidado implements ActionListener{
 		if (botaoRecebido.equals("Atualizar")){
 			
 			Convidado convidadoAlterar = new Convidado() ;
-			convidadoAlterar = repositorioConvidadoRecebido.buscarConvidado(textNomeRecebido.getText());
+			convidadoAlterar = repositorioConvidadoRecebido.buscarConvidado(textCpfRecebido.getText());
 			
 			if (convidadoAlterar != null) {
 				

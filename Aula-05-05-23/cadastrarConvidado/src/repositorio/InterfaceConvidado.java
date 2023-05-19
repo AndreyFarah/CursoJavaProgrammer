@@ -10,6 +10,6 @@ public interface InterfaceConvidado {
 		public List<Convidado> retornaConvidados();
 		public boolean deletarConvidado(Convidado convidado);
 		public Convidado buscarConvidado(String nomeConvidado);
-		public void alterarConvidado (Convidado convidadoAtual, Convidado convidadoNovo);
+		public void alterarConvidado (Convidado convidadoNovo);
 
 }

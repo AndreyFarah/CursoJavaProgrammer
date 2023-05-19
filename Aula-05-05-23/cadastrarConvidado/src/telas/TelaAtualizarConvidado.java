@@ -24,9 +24,12 @@ int qtdLinhas = listaConvidado.size();
 		int posicaoLinha = 0;
 		int posicaoColuna = 0;
 		
-		String [][] tabelaStringConvidado = new String [qtdLinhas][4];
+		String [][] tabelaStringConvidado = new String [qtdLinhas][6];
 		
 		for (Convidado convidado : listaConvidado) {
+			
+			tabelaStringConvidado[posicaoLinha][posicaoColuna] = convidado.getCpf();
+			posicaoColuna++;
 			
 			tabelaStringConvidado[posicaoLinha][posicaoColuna] = convidado.getNome();
 			posicaoColuna++;
@@ -38,12 +41,15 @@ int qtdLinhas = listaConvidado.size();
 			posicaoColuna++;
 			
 			tabelaStringConvidado[posicaoLinha][posicaoColuna] = convidado.getProfissao();
+			posicaoColuna++;
+			
+			tabelaStringConvidado[posicaoLinha][posicaoColuna] = convidado.getEmail();
 			
 			posicaoColuna = 0;
-			posicaoLinha++;		
+			posicaoLinha++;	
 		}
 		
-		String nomesColunas[] = {"NOME", "CONVITE", "ENDEREÇO","PROFISSAO"};
+		String nomesColunas[] = {"CPF","NOME", "CONVITE", "ENDEREÇO","PROFISSAO","E-MAIL"};
 		
 		JFrame frameAtualizarConvidado = new JFrame();
 		frameAtualizarConvidado.setSize(500,600);
@@ -56,11 +62,11 @@ int qtdLinhas = listaConvidado.size();
 		
 		JScrollPane scrollPaneListarConvidado = new JScrollPane(jtableConvidado);
 		
-		JLabel labelNome = new JLabel("Digite o nome para Alterar");
-		panelAtualizarConvidado.add(labelNome);
+		JLabel labelCpf = new JLabel("Digite o CPF para Alterar");
+		panelAtualizarConvidado.add(labelCpf);
 		
-		JTextField txtNomeAtualizar = new JTextField(10);
-		panelAtualizarConvidado.add(txtNomeAtualizar);
+		JTextField txtCpfAtualizar = new JTextField(10);
+		panelAtualizarConvidado.add(txtCpfAtualizar);
 				
 		panelAtualizarConvidado.add(scrollPaneListarConvidado);
 				
@@ -70,7 +76,7 @@ int qtdLinhas = listaConvidado.size();
 		frameAtualizarConvidado.add(panelAtualizarConvidado);
 		frameAtualizarConvidado.setVisible(true);
 		
-		ControladorTelaAtualizarConvidado controladorTelaAtualizarConvidado = new ControladorTelaAtualizarConvidado(frameMenuPrincipal, frameAtualizarConvidado, repositorioConvidado, txtNomeAtualizar);
+		ControladorTelaAtualizarConvidado controladorTelaAtualizarConvidado = new ControladorTelaAtualizarConvidado(frameMenuPrincipal, frameAtualizarConvidado, repositorioConvidado, txtCpfAtualizar);
 		botaoAtualizarConvidado.addActionListener(controladorTelaAtualizarConvidado);
 	}
 	

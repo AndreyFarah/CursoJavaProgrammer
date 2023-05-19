@@ -17,13 +17,16 @@ public class ControladorTelaFormularioAlterarConvidado implements ActionListener
 	JTextField textConviteRecebido;
 	JTextField textEnderecoRecebido;
 	JTextField textProfissaoRecebido;
+	JTextField textCpfRecebido;
+	JTextField textEmailRecebido;
 	Convidado convidadoAtual;
 	RepositorioConvidado repositorioConvidado;
 	
 
 	public ControladorTelaFormularioAlterarConvidado(JFrame frameMenuPrincipalRecebido, JFrame frameFormularioAlterar,
 			JTextField textNomeRecebido, JTextField textConviteRecebido, JTextField textEnderecoRecebido,
-			JTextField textProfissaoRecebido, Convidado convidadoEncontrado, RepositorioConvidado repositorioConvidado) {
+			JTextField textProfissaoRecebido, Convidado convidadoEncontrado, RepositorioConvidado repositorioConvidado, 
+			JTextField textCpf, JTextField textEmail) {
 		this.frameMenuPrincipalRecebido = frameMenuPrincipalRecebido;
 		this.frameFormularioAlterar = frameFormularioAlterar;
 		this.textNomeRecebido = textNomeRecebido;
@@ -32,13 +35,15 @@ public class ControladorTelaFormularioAlterarConvidado implements ActionListener
 		this.textProfissaoRecebido = textProfissaoRecebido;
 		this.convidadoAtual = convidadoEncontrado;
 		this.repositorioConvidado = repositorioConvidado;
+		this.textCpfRecebido = textCpf;
+		this.textEmailRecebido = textEmail;
 	}
 
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		repositorioConvidado.alterarConvidado(convidadoAtual, popularConvidadoNovo());
+		repositorioConvidado.alterarConvidado(popularConvidadoNovo());
 		frameFormularioAlterar.setVisible(false);
 		frameMenuPrincipalRecebido.setVisible(true);
 		
@@ -50,10 +55,12 @@ public class ControladorTelaFormularioAlterarConvidado implements ActionListener
 		
 		Convidado convidadoNovo = new Convidado();
 		
+		convidadoNovo.setCpf(textCpfRecebido.getText());
 		convidadoNovo.setNome(textNomeRecebido.getText());
 		convidadoNovo.setConvite(textConviteRecebido.getText());
 		convidadoNovo.setEndereco(textEnderecoRecebido.getText());
 		convidadoNovo.setProfissao(textProfissaoRecebido.getText());
+		convidadoNovo.setEmail(textEmailRecebido.getText());
 		
 		return convidadoNovo;
 		

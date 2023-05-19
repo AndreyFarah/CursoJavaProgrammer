@@ -32,6 +32,13 @@ public class TelaFormularioAlterarConvidado {
 		JPanel panelFormularioAlterarConvidado = new JPanel();
 		panelFormularioAlterarConvidado.setLayout(grid);
 		
+		JLabel labelCpf = new JLabel("Informe o cpf");
+		panelFormularioAlterarConvidado.add(labelCpf);
+		
+		JTextField textCpf = new JTextField(10);
+		textCpf.setText(convidadoEncontrado.getCpf());
+		panelFormularioAlterarConvidado.add(textCpf);
+		
 		JLabel labelNome = new JLabel(nome);
 		panelFormularioAlterarConvidado.add(labelNome);
 		
@@ -60,6 +67,13 @@ public class TelaFormularioAlterarConvidado {
 		textProfissao.setText(convidadoEncontrado.getProfissao());
 		panelFormularioAlterarConvidado.add(textProfissao);
 		
+		JLabel labelEmail = new JLabel("Informe o Email");
+		panelFormularioAlterarConvidado.add(labelEmail);
+		
+		JTextField textEmail = new JTextField(10);
+		textEmail.setText(convidadoEncontrado.getEmail());
+		panelFormularioAlterarConvidado.add(textEmail);
+		
 		JButton botaoEnviarCadastro = new JButton("Alterar Cadastro");
 		panelFormularioAlterarConvidado.add(botaoEnviarCadastro);
 		
@@ -67,7 +81,7 @@ public class TelaFormularioAlterarConvidado {
 		frameFormularioAlterarConvidado.setVisible(true);
 		
 		
-		ControladorTelaFormularioAlterarConvidado controladorTelaFormularioAlterarConvidado = new ControladorTelaFormularioAlterarConvidado(frameMenuPrincipal, frameFormularioAlterarConvidado, textNome, textConvite, textEndereco, textProfissao, convidadoEncontrado, repositorioConvidado);
+		ControladorTelaFormularioAlterarConvidado controladorTelaFormularioAlterarConvidado = new ControladorTelaFormularioAlterarConvidado(frameMenuPrincipal, frameFormularioAlterarConvidado, textNome, textConvite, textEndereco, textProfissao, convidadoEncontrado, repositorioConvidado, textCpf, textEmail);
 		botaoEnviarCadastro.addActionListener(controladorTelaFormularioAlterarConvidado);
 		
 		

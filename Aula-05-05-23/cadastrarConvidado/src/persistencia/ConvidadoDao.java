@@ -181,6 +181,64 @@ public class ConvidadoDao {
 		return listaConvidadoBanco;
 	}
 	
+	public boolean alterarConvidado (Convidado convidado) {
+		
+		FabricaConexao fabricaConexao = new FabricaConexao();
+		
+		
+		boolean alteracao = false;
+	
+		String comandoSqlUpdate = "update tabela_convidado set cpf = ?, nome = ?, convite = ?, endereco = ?, profissao= ?, email = ? where cpf = ?"; //COMANDO INSERT DO MYSQL COM ? NOS VALORES
+		
+		Connection conexaoCriada = null;
+		
+		PreparedStatement declaracaoComando = null;// PREPARAÇAO DO COMANDO
+		
+		try {
+			conexaoCriada = fabricaConexao.criarConexao();
+			
+			declaracaoComando = (PreparedStatement)conexaoCriada.prepareStatement(comandoSqlUpdate); //PREPARAÇÃO DO COMANDO RECEBE O BANCO E O COMANDO SQL
+			
+			declaracaoComando.setString(1, convidado.getCpf());
+			declaracaoComando.setString(2, convidado.getNome());
+			declaracaoComando.setString(3, convidado.getConvite());
+			declaracaoComando.setString(4, convidado.getEndereco());
+			declaracaoComando.setString(5, convidado.getProfissao());
+			declaracaoComando.setString(6, convidado.getEmail());
+			
+			declaracaoComando.setString(1, convidado.getCpf());
+			
+			declaracaoComando.execute();
+			
+			alteracao = true;
+			System.out.println("Convidado Atualizado com sucesso");
+			
+			
+		} catch (Exception e) {
+			System.out.println(e);
+			System.out.println("Erro ao atualizar");
+			
+			alteracao = false;
+			
+		} finally { //EXECUTAR DEPOIS DE VERIFICAR O TRY/CATCH -- EXECUTA DANDO CERTO OU ERRADO (SEMPRE EXECUTADO)
+			try {	// try para fechar a conexao
+				if (conexaoCriada != null) { //verifica a conexao diferente de nula, se for está conexao aberta
+					conexaoCriada.close();				
+				}
+				if (declaracaoComando != null) {
+					declaracaoComando.close();
+				}
+			} catch (Exception e2) {
+				System.out.println(e2);
+				System.out.println("Erro ao tentar fechar conexão");
+			}
+		}
+		
+		
+		return alteracao;
+		
+		
+	}
 	
 
 }

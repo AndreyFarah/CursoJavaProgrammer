@@ -63,10 +63,12 @@ public class RepositorioConvidado implements InterfaceConvidado{
 
 
 		@Override
-		public void alterarConvidado(Convidado convidadoAtual, Convidado convidadoNovo) {
+		public void alterarConvidado(Convidado convidadoNovo) {
 			
-			listaConvidados.remove(convidadoAtual);
-			listaConvidados.add(convidadoNovo);
+			convidadoDao.alterarConvidado(convidadoNovo);
+			
+			//	listaConvidados.remove(convidadoAtual);
+		//	listaConvidados.add(convidadoNovo);
 			
 			
 		}

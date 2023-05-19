@@ -6,18 +6,17 @@ public class PrimeiroLetraMaiuscula {
 		//	PT: Escreva uma função ou método, que receba uma string como parâmetro e responda se seu primeiro caractere é maiúsculo ou não.
 		//	bool IsFirstUpper(string s)
 		
-		VerificaMaiuscula veriMaiuscula = new VerificaMaiuscula();
+		//VerificaMaiuscula veriMaiuscula = new VerificaMaiuscula();
 		
-		boolean result;
+		//boolean result;
 		
-		result = veriMaiuscula.verificaCaracter("Andrey");
-		//System.out.println(isFirstUpper("andrey"));
+		//result = veriMaiuscula.verificaCaracter("andrey");
+		System.out.println(isFirstUpper("Andrey"));
+		//System.out.println(result);
 		
 		
 	}
 	
-	
-
 	public static boolean isFirstUpper (String str) {
 		
 		boolean msg;
