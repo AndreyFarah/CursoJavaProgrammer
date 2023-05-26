@@ -1,0 +1,24 @@
+
+O convidado: teste foi cadastrado.
+O convidado: teste foi cadastrado.
+
+O convidado: aaaaaa foi cadastrado.
+O convidado: aaaaaa foi cadastrado.
+
+O convidado: TESTE2 foi cadastrado.
+
+O convidado: TTTTT foi cadastrado.
+
+O convidado: Andreyok foi alterado.
+
+O convidado: TTTTT foi deletado.
+
+O convidado: assS foi cadastrado.
+
+O convidado: sasas foi cadastrado.
+
+O convidado: asasas foi cadastrado.
+
+O convidado: anr foi cadastrado.
+
+O convidado: andrey foi cadastrado.

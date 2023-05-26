@@ -7,8 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entidades.Convidado;
+import manipulacaoArquivo.LogCrudConvidado;
 
 public class ConvidadoDao {
+	
+	LogCrudConvidado logCrudConvidado = new LogCrudConvidado();
 	
 	public boolean salvarConviadoBanco (Convidado convidado) {
 		
@@ -40,6 +43,8 @@ public class ConvidadoDao {
 			salvar = true;
 			System.out.println("Convidado Salvo com SUCESSO");
 			
+			logCrudConvidado.escreverNoArquivo(convidado, "Cadastrar");
+			
 			
 		} catch (Exception e) {
 			System.out.println(e);
@@ -66,7 +71,7 @@ public class ConvidadoDao {
 	}
 	
 	
-	public boolean deletarConvidadoBanco (String cpf) {
+	public boolean deletarConvidadoBanco (Convidado convidado) {
 		
 		FabricaConexao fabricaConexao = new FabricaConexao();
 		
@@ -84,17 +89,22 @@ public class ConvidadoDao {
 			
 			declaracaoComando = (PreparedStatement)conexaoCriada.prepareStatement(comandoSqlDeletar); //PREPARAÇÃO DO COMANDO RECEBE O BANCO E O COMANDO SQL
 			
-			declaracaoComando.setString(1, cpf);
+			declaracaoComando.setString(1, convidado.getCpf());
 			
 			declaracaoComando.execute();
 			
 			excluir = true;
 			System.out.println("Convidado DELETADO com SUCESSO");
 			
+			logCrudConvidado.escreverNoArquivo(convidado, "Deletar");
+			
+			
 			
 		} catch (Exception e) {
 			System.out.println(e);
 			System.out.println("Erro ao DELETAR");
+			
+			
 			
 			excluir = false;
 			
@@ -181,7 +191,7 @@ public class ConvidadoDao {
 		return listaConvidadoBanco;
 	}
 	
-	public boolean alterarConvidado (Convidado convidado) {
+	public boolean alterarConvidadoBanco (Convidado convidado) {
 		
 		FabricaConexao fabricaConexao = new FabricaConexao();
 		
@@ -206,12 +216,14 @@ public class ConvidadoDao {
 			declaracaoComando.setString(5, convidado.getProfissao());
 			declaracaoComando.setString(6, convidado.getEmail());
 			
-			declaracaoComando.setString(1, convidado.getCpf());
+			declaracaoComando.setString(7, convidado.getCpf());
 			
 			declaracaoComando.execute();
 			
 			alteracao = true;
 			System.out.println("Convidado Atualizado com sucesso");
+			
+			logCrudConvidado.escreverNoArquivo(convidado, "Alterar");
 			
 			
 		} catch (Exception e) {
@@ -240,5 +252,6 @@ public class ConvidadoDao {
 		
 	}
 	
+
 
 }

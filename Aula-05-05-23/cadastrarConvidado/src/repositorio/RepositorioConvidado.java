@@ -34,7 +34,7 @@ public class RepositorioConvidado implements InterfaceConvidado{
 			
 			boolean resultado;
 			
-			resultado = convidadoDao.deletarConvidadoBanco(convidado.getCpf());
+			resultado = convidadoDao.deletarConvidadoBanco(convidado);
 		/*	 ###### PARA LISTA
 			try {
 				listaConvidados.remove(convidado);
@@ -65,7 +65,7 @@ public class RepositorioConvidado implements InterfaceConvidado{
 		@Override
 		public void alterarConvidado(Convidado convidadoNovo) {
 			
-			convidadoDao.alterarConvidado(convidadoNovo);
+			convidadoDao.alterarConvidadoBanco(convidadoNovo);
 			
 			//	listaConvidados.remove(convidadoAtual);
 		//	listaConvidados.add(convidadoNovo);

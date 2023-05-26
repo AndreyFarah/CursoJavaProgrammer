@@ -36,7 +36,8 @@ public class TelaFormularioAlterarConvidado {
 		panelFormularioAlterarConvidado.add(labelCpf);
 		
 		JTextField textCpf = new JTextField(10);
-		textCpf.setText(convidadoEncontrado.getCpf());
+		textCpf.setText(convidadoEncontrado.getCpf()); // PORIBE EDITAR O CAMPO CPF
+		textCpf.setEditable(false);
 		panelFormularioAlterarConvidado.add(textCpf);
 		
 		JLabel labelNome = new JLabel(nome);

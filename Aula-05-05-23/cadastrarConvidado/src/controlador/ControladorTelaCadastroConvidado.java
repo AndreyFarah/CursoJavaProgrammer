@@ -9,7 +9,7 @@ import javax.swing.JTextField;
 
 import entidades.Convidado;
 import repositorio.RepositorioConvidado;
-import validacao.ValidacaoConvidado;
+import validacao.MensagemErroValidacaoConvidado;
 
 public class ControladorTelaCadastroConvidado implements ActionListener{
 	
@@ -41,9 +41,9 @@ public class ControladorTelaCadastroConvidado implements ActionListener{
 			this.cpfRecebido = textCpfRecebido;
 		}
 	
-		ValidacaoConvidado validacaoConvidado = new ValidacaoConvidado();
+		MensagemErroValidacaoConvidado mensagemErroValidacaoConvidado = new MensagemErroValidacaoConvidado();
 		
-		boolean convidadoValidado = true;
+		 String mensagemErro;
 	
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -60,9 +60,8 @@ public class ControladorTelaCadastroConvidado implements ActionListener{
 			
 			Convidado convidado = new Convidado();
 			
-			convidadoValidado = validacaoConvidado.validaEmail(emailRecebido.getText());
-			
-			if (convidadoValidado) {
+			//convidadoValidado = validacaoEntidado.validaEmail(emailRecebido.getText());
+
 				convidado.setNome(nomeRecebido.getText());
 				convidado.setConvite(conviteRecebido.getText());
 				convidado.setEndereco(enderecoRecebido.getText());
@@ -70,11 +69,18 @@ public class ControladorTelaCadastroConvidado implements ActionListener{
 				convidado.setEmail(emailRecebido.getText());
 				convidado.setCpf(cpfRecebido.getText());
 				
-				return convidado;
-			} else {
-				JOptionPane.showMessageDialog(null, "O email informado: " + emailRecebido.getText() + " não é valido. Por favor informe um email válido para continuar");
-				return null;
-			}
+				mensagemErro = mensagemErroValidacaoConvidado.retornaMenssagemErro(convidado);
+				
+				if (mensagemErro == null) {
+					JOptionPane.showMessageDialog(null, "Convidado cadastrado com sucesso");
+					return convidado;
+				} else {
+					JOptionPane.showMessageDialog(null, mensagemErro);
+					return null;
+				}
+				
+			
+
 	
 		}
 		
